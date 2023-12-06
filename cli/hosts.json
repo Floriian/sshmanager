@@ -1,0 +1,19 @@
+{
+    "hosts": [
+        {
+            "name": "Test - Deploy",
+            "username": "sshuser",
+            "address": "localhost",
+            "port": 2222,
+            "password": "password",
+            "command": "echo 'asd'",
+            "pem": "Testt.pem"
+        },
+        {
+            "name": "Test 123",
+            "address": "sshuser@localhost",
+            "port": 2222,
+            "password": "password"
+        }
+    ]
+}
