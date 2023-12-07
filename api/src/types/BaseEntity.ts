@@ -6,5 +6,7 @@ export class BaseEntity {
   @ApiProperty()
   createdAt: Date;
   @ApiProperty()
-  UpdatedAt: Date;
+  updatedAt: Date;
+  @ApiProperty()
+  __v: number;
 }
