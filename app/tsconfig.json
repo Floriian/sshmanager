@@ -23,7 +23,8 @@
     /* Pat alias */
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"],
+      "@/*": ["src/*"],
+      "@app": ["src/*"],
       "@features/*": ["src/features"],
       "@components": ["src/components"]
     }
