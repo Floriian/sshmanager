@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { mongoConfig } from 'src/configs';
 import { EnvModule } from 'src/env/env.module';
 import { envSchema } from 'src/env/env.schema';
+import { ServersModule } from './servers/servers.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -12,6 +13,7 @@ import { envSchema } from 'src/env/env.schema';
     }),
     EnvModule,
     MongooseModule.forRootAsync(mongoConfig),
+    ServersModule,
   ],
 })
 export class AppModule {}

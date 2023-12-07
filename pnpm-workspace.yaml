@@ -3,3 +3,4 @@ packages:
   - "www"
   - "cli"
   - "api"
+  - "shared"
