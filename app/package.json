@@ -1,5 +1,5 @@
 {
-  "name": "dsahboard",
+  "name": "app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/style": "^0.8.0",
+    "@hookform/resolvers": "^3.3.2",
+    "@mui/material": "^5.14.20",
+    "@reduxjs/toolkit": "^2.0.1",
+    "axios": "^1.6.2",
+    "class-validator": "^0.14.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "@sshmanager/shared": "workspace:^"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

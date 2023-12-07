@@ -1,6 +1,6 @@
 packages:
   - "api"
-  - "www"
   - "cli"
-  - "api"
+  - "app"
   - "shared"
+  - "www"
