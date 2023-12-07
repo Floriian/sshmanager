@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { CreateServerDto } from 'src/servers/dto';
-import { Server, ServerModel } from 'src/servers/schema/server.shema';
+import { CreateServerDto } from 'src/server/dto';
+import { Server, ServerModel } from 'src/server/schema/server.shema';
 
 @Injectable()
-export class ServersService {
+export class ServerService {
   constructor(
     @InjectModel(Server.name) private readonly serverModel: ServerModel,
   ) {}

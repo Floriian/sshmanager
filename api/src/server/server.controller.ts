@@ -6,15 +6,15 @@ import {
   HttpStatus,
   Post,
 } from '@nestjs/common';
-import { ServersService } from './servers.service';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { Server } from 'src/servers/schema/server.shema';
-import { CreateServerDto } from 'src/servers/dto';
+import { Server } from 'http';
+import { CreateServerDto } from 'src/server/dto';
+import { ServerService } from 'src/server/server.service';
 
-@Controller('servers')
-@ApiTags('Servers')
-export class ServersController {
-  constructor(private readonly serversService: ServersService) {}
+@Controller('server')
+@ApiTags('Server')
+export class ServerController {
+  constructor(private readonly serverService: ServerService) {}
 
   @Get('/list')
   @HttpCode(HttpStatus.OK)
@@ -22,13 +22,13 @@ export class ServersController {
     type: Server,
   })
   list() {
-    return this.serversService.list();
+    return this.serverService.list();
   }
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
   @ApiCreatedResponse({ type: Server })
   create(@Body() dto: CreateServerDto) {
-    return this.serversService.create(dto);
+    return this.serverService.create(dto);
   }
 }
