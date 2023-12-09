@@ -1,18 +1,26 @@
 import { useAppDispatch } from "@/app";
 import { getServerThunk, useServers } from "@/features/server";
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { useEffect } from "react";
-import { Button } from "@mui/material"
+
+const cols: GridColDef[] = [
+    {
+        field: 'name', headerName: 'Name', width: 130,
+    }
+]
+
 export function ServerPage() {
     const servers = useServers();
     const dispatch = useAppDispatch();
-
     useEffect(() => {
         return () => {
             dispatch(getServerThunk());
         }
-    }, []);
+    }, [])
 
-    useEffect(() => console.log(servers), [servers])
+    const serverRows = servers.data.map((server, index) => ({ id: index, name: server.name }));
 
-    return <Button>Add server</Button>
+    return <DataGrid rows={serverRows} columns={cols}>
+
+    </DataGrid>
 }
