@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from "@/app";
-import { getServerThunk } from "@/features/server";
+import { useAppDispatch } from "@/app";
+import { getServerThunk, useServers } from "@/features/server";
 import { useEffect } from "react";
 import { Button } from "@mui/material"
 export function ServerPage() {
-    const serverState = useAppSelector((state) => state.server)
+    const servers = useServers();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export function ServerPage() {
         }
     }, []);
 
-    useEffect(() => console.log(serverState), [serverState])
+    useEffect(() => console.log(servers), [servers])
 
     return <Button>Add server</Button>
 }

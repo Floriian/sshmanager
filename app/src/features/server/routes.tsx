@@ -1,7 +1,11 @@
 import { ServerPage } from "@/features/server";
-import { RouteObject } from "react-router-dom";
+import { Route } from "@/types";
+import { Storage } from "@mui/icons-material";
 
-export const serverRoutes: RouteObject[] = [{
+export const serverRoutes: Route = {
+    name: "Servers",
     path: "/server",
-    element: <ServerPage />
-}]
+    element: <ServerPage />,
+    showOnDrawer: true,
+    icon: <Storage />
+}
